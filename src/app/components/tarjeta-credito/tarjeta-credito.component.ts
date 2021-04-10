@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-tarjeta-credito',
@@ -16,7 +17,7 @@ export class TarjetaCreditoComponent implements OnInit {
 
   form: FormGroup;
   
-  constructor(private fb: FormBuilder){
+  constructor(private fb: FormBuilder, private toastr: ToastrService){
     this.form = this.fb.group({
       titular: ['', Validators.required],
       numeroTarjeta: ['', [Validators.required, Validators.maxLength(16), Validators.minLength(16)]], // Cuando ponemos mas de una validaciones tenemos que poner un array
@@ -33,8 +34,8 @@ export class TarjetaCreditoComponent implements OnInit {
       fechaExpiracion: this.form.get('fechaExpiracion')?.value, // el ? hace referencia a los datos nulos, despues lo vemos bien
       cvv: this.form.get('cvv')?.value, // el ? hace referencia a los datos nulos, despues lo vemos bien
     }
-    console.log(tarjeta);
     this.listaTarjetas.push(tarjeta);
+    this.toastr.success('La tarjeta fue registrada con exito!', 'Tarjeta registrada!');
     this.form.reset();
   }
 
