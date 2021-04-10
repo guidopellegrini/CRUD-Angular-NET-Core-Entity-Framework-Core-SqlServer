@@ -42,4 +42,9 @@ export class TarjetaCreditoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  eliminarTarjeta(index: number){
+    this.listaTarjetas.splice(index, 1);
+    this.toastr.error('La tarjeta fue eliminada con exito!', 'Tarjeta eliminada')
+  }
+
 }
