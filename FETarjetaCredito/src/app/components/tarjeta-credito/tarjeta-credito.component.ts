@@ -27,10 +27,17 @@ export class TarjetaCreditoComponent implements OnInit {
     })
   }
 
-  obtenerTarjetas(){
-    
+  ngOnInit(): void {
+    this.obtenerTarjetas();
   }
 
+  obtenerTarjetas(){
+    this._tarjetaService.getListTarjetas().subscribe(data => {
+      console.log(data);
+    }, error => {
+      console.log(error);
+    })
+  }
 
   agregarTarjeta(){
     console.log(this.form);
@@ -45,8 +52,6 @@ export class TarjetaCreditoComponent implements OnInit {
     this.form.reset();
   }
 
-  ngOnInit(): void {
-  }
 
   eliminarTarjeta(index: number){
     this.listaTarjetas.splice(index, 1);
