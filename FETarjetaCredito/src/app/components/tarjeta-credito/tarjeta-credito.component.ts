@@ -10,8 +10,9 @@ import { TarjetaService } from 'src/app/services/tarjeta.service';
 })
 export class TarjetaCreditoComponent implements OnInit {
 
-  listaTarjetas: any[] = [
-  ];
+  listaTarjetas: any[] = [];
+  accion = 'Agregar';
+  id: number | undefined; // la | nos permite definir 2 tipos de datos posibles para la variable. 
 
   form: FormGroup;
   
@@ -38,18 +39,39 @@ export class TarjetaCreditoComponent implements OnInit {
     })
   }
 
-  agregarTarjeta(){
-    console.log(this.form);
+  guardarTarjeta(){
     const tarjeta: any = {
       titular: this.form.get('titular')?.value, // el ? hace referencia a los datos nulos, despues lo vemos bien
       numeroTarjeta: this.form.get('numeroTarjeta')?.value, // el ? hace referencia a los datos nulos, despues lo vemos bien
       fechaExpiracion: this.form.get('fechaExpiracion')?.value, // el ? hace referencia a los datos nulos, despues lo vemos bien
       cvv: this.form.get('cvv')?.value, // el ? hace referencia a los datos nulos, despues lo vemos bien
     }
-    this.listaTarjetas.push(tarjeta);
-    this.toastr.success('La tarjeta fue registrada con exito!', 'Tarjeta registrada!');
-    this.form.reset();
+
+    if(this.id == undefined) {
+
+      this._tarjetaService.saveTarjeta(tarjeta).subscribe(data =>{
+        this.toastr.success('La tarjeta fue registrada con exito!', 'Tarjeta registrada!');
+        this.obtenerTarjetas();
+        this.form.reset();
+      }, error =>{
+        this.toastr.error('Ocurrio un error','Error');
+      })
+
+    } else {
+      tarjeta.id = this.id;
+      //Editamos tarjeta
+      this._tarjetaService.updateTarjeta(this.id, tarjeta).subscribe(data =>{
+        this.form.reset();
+        this.accion = 'Agregar';
+        this.id = undefined;
+        this.toastr.info('La tarjeta fue actualizada con exito', 'Tarjeta Actualizada');
+        this.obtenerTarjetas();
+      }, error => {
+        console.log(error);
+      })
+    }
   }
+
 
   eliminarTarjeta(id: number){
     this._tarjetaService.deleteTarjeta(id).subscribe(data =>{
@@ -59,5 +81,21 @@ export class TarjetaCreditoComponent implements OnInit {
       console.log(error);
     })
   }
+
+  editarTarjeta(tarjeta: any) {
+    this.accion = 'Editar';
+    this.id = tarjeta.id;
+
+    this.form.patchValue({
+      titular: tarjeta.titular,
+      numeroTarjeta: tarjeta.numeroTarjeta,
+      fechaExpiracion: tarjeta.fechaExpiracion,
+      cvv: tarjeta.cvv
+    })
+
+  }
+
+
+
 
 }
