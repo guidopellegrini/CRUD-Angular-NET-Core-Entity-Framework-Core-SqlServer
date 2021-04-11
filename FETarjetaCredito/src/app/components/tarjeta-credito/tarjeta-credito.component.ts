@@ -11,9 +11,6 @@ import { TarjetaService } from 'src/app/services/tarjeta.service';
 export class TarjetaCreditoComponent implements OnInit {
 
   listaTarjetas: any[] = [
-    { titular: 'Juan Perez', numeroTarjeta: '12312312312312', fechaExpiracion: '11/12', cvv: '123'},
-    { titular: 'Miguel Gonzales', numeroTarjeta: '423423423423434', fechaExpiracion: '12/22', cvv: '433'},
-    { titular: 'Adriana Diaz', numeroTarjeta: '543453453453434', fechaExpiracion: '02/26', cvv: '873'}
   ];
 
   form: FormGroup;
@@ -29,11 +26,13 @@ export class TarjetaCreditoComponent implements OnInit {
 
   ngOnInit(): void {
     this.obtenerTarjetas();
+
   }
 
   obtenerTarjetas(){
     this._tarjetaService.getListTarjetas().subscribe(data => {
       console.log(data);
+      this.listaTarjetas = data;
     }, error => {
       console.log(error);
     })
@@ -52,10 +51,13 @@ export class TarjetaCreditoComponent implements OnInit {
     this.form.reset();
   }
 
-
-  eliminarTarjeta(index: number){
-    this.listaTarjetas.splice(index, 1);
-    this.toastr.error('La tarjeta fue eliminada con exito!', 'Tarjeta eliminada')
+  eliminarTarjeta(id: number){
+    this._tarjetaService.deleteTarjeta(id).subscribe(data =>{
+    this.toastr.error('La tarjeta fue eliminada con exito!', 'Tarjeta eliminada');
+    this.obtenerTarjetas();
+    }, error =>{
+      console.log(error);
+    })
   }
 
 }

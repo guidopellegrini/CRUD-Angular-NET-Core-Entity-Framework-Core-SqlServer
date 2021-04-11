@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class TarjetaService {
   myAppUrl = 'https://localhost:44362/'
   myApiUrl = 'api/tarjeta/'
@@ -14,4 +15,17 @@ export class TarjetaService {
   getListTarjetas(): Observable<any>{
     return this.http.get(this.myAppUrl + this.myApiUrl);
   }
+
+  deleteTarjeta(id: number): Observable<any>{
+    return this.http.delete(this.myAppUrl + this.myApiUrl + id) // armamos la ruta
+  }
+
+  saveTarjeta(tarjeta: any) : Observable<any>{
+    return this.http.post(this.myAppUrl + this.myApiUrl, tarjeta);
+  }
+
 }
+
+
+
+
