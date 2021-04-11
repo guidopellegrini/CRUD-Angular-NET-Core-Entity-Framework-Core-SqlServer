@@ -72,7 +72,6 @@ export class TarjetaCreditoComponent implements OnInit {
     }
   }
 
-
   eliminarTarjeta(id: number){
     this._tarjetaService.deleteTarjeta(id).subscribe(data =>{
     this.toastr.error('La tarjeta fue eliminada con exito!', 'Tarjeta eliminada');
