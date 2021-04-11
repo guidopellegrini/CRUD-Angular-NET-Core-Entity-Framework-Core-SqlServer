@@ -1,4 +1,4 @@
-# Desarrollo frontend con Angular 9, backend NET Core 3, Entity Framework Core 3, SQL Server + Deploy a Azure!
+# Desarrollo frontend con Angular 9, backend NET Core 3, Entity Framework Core 3, SQL Server.
 
 FronEnd: Angular 9, HTML, CSS JavaScript y Boostrap 4
 
