@@ -4,7 +4,7 @@ FronEnd: Angular 9, HTML, CSS JavaScript y Boostrap 4
 
 BackEnd: NET Core 3.1
 
-ORM: Entinty Framework 3.1
+ORM: Entity Framework 3.1
 
 Base de datos: SQL Server
 
