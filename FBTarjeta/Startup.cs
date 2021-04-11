@@ -33,7 +33,7 @@ namespace FBTarjeta
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "FBTarjeta", Version = "v1" });
             });
-
+            var connection = Configuration.GetConnectionString("devConnection");
             services.AddDbContext<AplicationDbContext>(options => options.UseSqlServer(connection));
         }
 
