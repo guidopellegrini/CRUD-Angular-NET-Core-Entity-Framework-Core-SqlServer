@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="TarjetaService" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\guido\\Desktop\\CRUD\ Angular\ \+\ NET\ Core\ \+\ Entity\ Framework\ Core\+SqlServer\\CRUD-Angular-NET-Core-Entity-Framework-Core-SqlServer\\FBTarjeta\\obj\\Release\\net5\.0\\PubTmp\\Out\\$" />
+  </parameter>
+  <parameter name="FBTarjeta.AplicationDbContext" description="" value="Data Source=tcp:fbtarjetadbserver.database.windows.net,1433;Initial Catalog=FBTarjeta_db;User Id=guido@fbtarjetadbserver;Password=Coco2020?" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\Users\\guido\\Desktop\\CRUD\ Angular\ \+\ NET\ Core\ \+\ Entity\ Framework\ Core\+SqlServer\\CRUD-Angular-NET-Core-Entity-Framework-Core-SqlServer\\FBTarjeta\\obj\\Release\\net5\.0\\PubTmp\\EFSQLScripts\\FBTarjeta\.AplicationDbContext\.sql$" />
+  </parameter>
+</parameters>

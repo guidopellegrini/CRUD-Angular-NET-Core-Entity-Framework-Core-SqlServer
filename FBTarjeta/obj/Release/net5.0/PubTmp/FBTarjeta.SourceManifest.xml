@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="C:\Users\guido\Desktop\CRUD Angular + NET Core + Entity Framework Core+SqlServer\CRUD-Angular-NET-Core-Entity-Framework-Core-SqlServer\FBTarjeta\obj\Release\net5.0\PubTmp\Out\" />
+  <dbfullsql path="C:\Users\guido\Desktop\CRUD Angular + NET Core + Entity Framework Core+SqlServer\CRUD-Angular-NET-Core-Entity-Framework-Core-SqlServer\FBTarjeta\obj\Release\net5.0\PubTmp\EFSQLScripts\FBTarjeta.AplicationDbContext.sql" />
+</sitemanifest>

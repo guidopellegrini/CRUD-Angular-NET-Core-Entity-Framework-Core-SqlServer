@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 
 export class TarjetaService {
-  myAppUrl = 'https://localhost:44362/'
+  myAppUrl = 'https://tarjetaservice.azurewebsites.net/'
   myApiUrl = 'api/tarjeta/'
 
   constructor(private http: HttpClient) { }

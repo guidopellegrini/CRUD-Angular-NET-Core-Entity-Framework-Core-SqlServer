@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
+edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 para obtener más información. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAE+sekvUe0E2ulfh42iRqSAAAAAACAAAAAAAQZgAAAAEAACAAAAD0D0NzleLPZytWn0eWOE4TIhEVgm086nB/O+zLQ4zOwgAAAAAOgAAAAAIAACAAAACAowJVeLYZArgP11Yox354AX3qWvLgnS6PyDblSjFOD4AAAABDQtTLD7HuGW4uKQbs35Z/aK21+LFeE54+1v7d0Om8P5BISD+Bd9tscK+w26amumxFHssgRn+vZmF4qnISZON0Zy9CH1dPDie+UPrA2H5lyx8BXepoNSsPsBT6/awM8m1q15erPoL2fN8u9lApPU4zTULjf4cn5vbVV4AwE7Tt2kAAAABGzjJx9nBWe13uq0tAWmjnpor6huLePhyhEkYSvhZyPyJk0XgJ/lMr6q2DyteSst7zElpufyaxNUSl0aFrz0fy</EncryptedPassword>
+    <History>True|2021-04-12T15:51:46.2322956Z;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="devConnection">
+      <Value>Data Source=tcp:fbtarjetadbserver.database.windows.net,1433%3bInitial Catalog=FBTarjeta_db%3bUser Id=guido%40fbtarjetadbserver%3bPassword=Coco2020%3f</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="FBTarjeta.AplicationDbContext">
+      <Value>Data Source=tcp:fbtarjetadbserver.database.windows.net,1433%3bInitial Catalog=FBTarjeta_db%3bUser Id=guido%40fbtarjetadbserver%3bPassword=Coco2020%3f</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

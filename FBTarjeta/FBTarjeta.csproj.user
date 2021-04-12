@@ -3,5 +3,6 @@
   <PropertyGroup>
     <Controller_SelectedScaffolderID>MvcControllerWithActionsScaffolder</Controller_SelectedScaffolderID>
     <Controller_SelectedScaffolderCategoryPath>root/Common/MVC/Controller</Controller_SelectedScaffolderCategoryPath>
+    <NameOfLastUsedPublishProfile>C:\Users\guido\Desktop\CRUD Angular + NET Core + Entity Framework Core+SqlServer\CRUD-Angular-NET-Core-Entity-Framework-Core-SqlServer\FBTarjeta\Properties\PublishProfiles\TarjetaService - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

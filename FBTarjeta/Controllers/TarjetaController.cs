@@ -40,11 +40,11 @@ namespace FBTarjeta.Controllers
         }
 
         // GET api/<ValuesController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
+        //[HttpGet("{id}")]
+        //public string Get(int id)
+        //{
+        //    return "value";
+        //}
 
         // POST api/<ValuesController>
         [HttpPost]
